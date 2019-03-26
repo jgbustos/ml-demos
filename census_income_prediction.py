@@ -21,9 +21,9 @@ def init():
     """Loads the ML trained model (plus ancillary files) from file."""
     global model, columns, selector
     if not ready():
-        model = joblib.load(full_path('models/GaussianNB_full.pkl'))
-        columns = joblib.load(full_path('models/columns.pkl'))
-        selector = joblib.load(full_path('models/feature_select.pkl'))
+        model = joblib.load(full_path("models/GaussianNB_full.pkl"))
+        columns = joblib.load(full_path("models/columns.pkl"))
+        selector = joblib.load(full_path("models/feature_select.pkl"))
 
 def run(data):
     """Makes a prediction using the trained ML model."""
@@ -39,20 +39,20 @@ def run(data):
 def sample():
     """Returns a sample input vector as a dictionary."""
     return {
-        'age':43,
-        'workclass':'Private',
-        'fnlwgt':100000,
-        'education':'Bachelors',
-        'education-num':13,
-        'marital-status':'Married-civ-spouse',
-        'occupation':'Sales',
-        'relationship':'Husband',
-        'race':'White',
-        'sex':'Male',
-        'capital-gain':0,
-        'capital-loss':0,
-        'hours-per-week':40,
-        'native-country':'Spain',
+        "age":43,
+        "workclass":"Private",
+        "fnlwgt":100000,
+        "education":"Bachelors",
+        "education-num":13,
+        "marital-status":"Married-civ-spouse",
+        "occupation":"Sales",
+        "relationship":"Husband",
+        "race":"White",
+        "sex":"Male",
+        "capital-gain":0,
+        "capital-loss":0,
+        "hours-per-week":40,
+        "native-country":"Spain"
     }
 
 if __name__ == "__main__":
