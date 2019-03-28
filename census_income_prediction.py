@@ -11,7 +11,6 @@ def full_path(filename):
 
 model = None
 columns = None
-selector = None
 
 def ready():
     """Returns whether the ML trained model has been loaded from file correctly."""
@@ -19,18 +18,16 @@ def ready():
 
 def init():
     """Loads the ML trained model (plus ancillary files) from file."""
-    global model, columns, selector
+    global model, columns
     if not ready():
-        model = joblib.load(full_path("models/GaussianNB_full.pkl"))
+        model = joblib.load(full_path("models/XGBClassifier.pkl"))
         columns = joblib.load(full_path("models/columns.pkl"))
-        selector = joblib.load(full_path("models/feature_select.pkl"))
 
 def run(data):
     """Makes a prediction using the trained ML model."""
     test = data if isinstance(data, pd.DataFrame) else pd.DataFrame(data, index=[0])
     test = pd.get_dummies(test)
     test = test.reindex(columns=columns, fill_value=0)
-    #test = selector.transform(test)
     prediction = model.predict(test)
     if isinstance(prediction, np.ndarray):
         prediction = prediction.tolist()
