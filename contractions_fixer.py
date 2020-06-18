@@ -4,8 +4,8 @@ import regex
 contractions_dict = {
     "ain't": "are not",
     "aren't": "are not",
-    "can't": "cannot",
-    "can't've": "cannot have",
+    "can't": "can not",
+    "can't've": "can not have",
     "'cause": "because",
     "could've": "could have",
     "couldn't": "could not",
@@ -23,6 +23,7 @@ contractions_dict = {
     "he'll've": "he will have",
     "he's": "he is",
     "how'd": "how did",
+    "how're": "how are",
     "how'd'y": "how do you",
     "how'll": "how will",
     "how's": "how is",
@@ -119,10 +120,6 @@ contractions_dict = {
     "you'll've": "you shall have",
     "you're": "you are",
     "you've": "you have",
-    "doin'": "doing",
-    "goin'": "going",
-    "nothin'": "nothing",
-    "somethin'": "something",
 }
 
 
@@ -131,13 +128,22 @@ contractions_dict.update({k.replace("'", "’"): v for k, v in contractions_dict
 
 
 leftovers_dict = {
-    "'all": '',
-    "'am": '',
-    "'cause": 'because',
+    "'all": "",
+    "'am": "",
+    "'cause": "because",
     "'d": " would",
     "'ll": " will",
     "'re": " are",
     "'em": " them",
+    "doin'": "doing",
+    "goin'": "going",
+    "nothin'": "nothing",
+    "somethin'": "something",
+    "havin'": "having",
+    "lovin'": "loving",
+    "'coz": "because",
+    "thats": "that is",
+    "whats": "what is",
 }
 
 leftovers_dict.update({k.replace("'", "’"): v for k, v in leftovers_dict.items()})
